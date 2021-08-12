@@ -34,8 +34,6 @@ int main(int argc, const char** args) {
 	}
 
 	int packets_per_file = 1000000;
-	int files = 10;
-
 	
 	const char* outfile = args[1];
 	light_file zstd_file = light_io_zstd_open(outfile, "wb");
