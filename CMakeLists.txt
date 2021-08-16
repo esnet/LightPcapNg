@@ -31,6 +31,7 @@ add_library(light_pcapng_static STATIC ${LIGHT_SOURCES})
 target_include_directories(light_pcapng PUBLIC "include")
 target_include_directories(light_pcapng_static PUBLIC "include")
 
+
 # ZSTD
 
 option(LIGHT_USE_ZSTD "Compile with ZSTD support" ON)
@@ -50,3 +51,6 @@ endif()
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME AND BUILD_TESTING)
     add_subdirectory(tests)
 endif()
+
+target_link_libraries(light_pcapng config)
+target_link_libraries(light_pcapng_static config)
